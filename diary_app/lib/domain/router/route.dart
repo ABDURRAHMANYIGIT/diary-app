@@ -1,3 +1,4 @@
+import 'package:diary_app/presentation/screens/listing/listing_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -29,7 +30,8 @@ class AppRouter {
 
   static const String designRoute = '/design_route';
   static const String uiTest = '/ui_test';
-
+  static const String listingRoute = '/listing';
+  static const String contentDetailRoute = '/content-detail';
 /* 
   static final List<Bindings> _homeBindings = <Bindings>[
      XPageBinding(),
@@ -58,6 +60,10 @@ class AppRouter {
     GetPage<dynamic>(
       name: uiTest,
       page: () => const UiTestScreen(),
+    ),
+    GetPage<dynamic>(
+      name: listingRoute,
+      page: () => const ListingScreen(),
     ),
   ];
 }

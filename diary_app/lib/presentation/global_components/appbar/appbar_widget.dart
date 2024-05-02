@@ -1,3 +1,4 @@
+import 'package:diary_app/presentation/global_components/image_asset.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/enums/appbar_type_enum.dart';
@@ -54,10 +55,17 @@ class _CustomAppBarState extends State<CustomAppBar> {
           elevation: 0,
           title: Row(
             children: <Widget>[
-              AppBarBackIconWidget(
-                onTap: widget.leadingIconFunction,
-                color: widget.iconColor ?? AppColors.white,
-              ),
+              widget.leadingIcon != null
+                  ? ImageAsset(
+                      widget.leadingIcon!,
+                      width: 32,
+                      height: 32,
+                      color: widget.iconColor,
+                    )
+                  : AppBarBackIconWidget(
+                      onTap: widget.leadingIconFunction,
+                      color: widget.iconColor ?? AppColors.white,
+                    ),
             ],
           ),
           flexibleSpace: Container(
